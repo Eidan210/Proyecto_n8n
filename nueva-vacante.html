@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Vacantes | Portal de Talento</title>
+  
+  <!-- Fuente Google Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="pagina-formulario">
+
+  <!-- Barra de Acciones Superior -->
+  <div class="barra-superior ancho">
+    <div class="nav-grupo">
+      <button type="button" id="btn-recargar-vacantes" class="link-nav" title="Sincronizar con Google Sheets">
+        <span id="icono-recargar">🔄</span> Actualizar Vacantes
+      </button>
+      <a href="index.html" class="link-nav">💼 Postulación</a>
+      <a href="nueva-vacante.html" class="link-nav activo">➕ Nueva Vacante</a>
+      <a href="dashboard.html" class="link-nav">📊 Dashboard RRHH</a>
+    </div>
+    <button type="button" id="btn-tema" class="btn-tema" aria-label="Cambiar tema">
+      <span id="icono-tema">🌙</span>
+      <span id="texto-tema">Modo Oscuro</span>
+    </button>
+  </div>
+
+  <main class="contenedor contenedor-ancho">
+    
+    <header class="encabezado">
+      <div class="icono-encabezado">📋</div>
+      <h1>Crear Nueva Vacante</h1>
+      <p>Registra y administra las oportunidades laborales conectadas a Google Sheets.</p>
+    </header>
+
+    <!-- Formulario para Registrar Nueva Vacante -->
+    <form id="form-nueva-vacante" class="formulario">
+
+      <!-- Fila 1: Vacante y Código -->
+      <div class="fila-doble">
+        <div class="campo">
+          <label for="vacante">Vacante (Título del puesto) <span class="asterisco">*</span></label>
+          <input type="text" id="vacante" name="vacante" placeholder="Ej: Desarrollador QA / Tester Junior" required>
+        </div>
+
+        <div class="campo">
+          <label for="codigo">Código (Identificador único) <span class="asterisco">*</span></label>
+          <input type="text" id="codigo" name="codigo" placeholder="Ej: qa-tester-junior" required>
+        </div>
+      </div>
+
+      <!-- Fila 2: Tecnologías -->
+      <div class="campo">
+        <label for="tecnologias">Tecnologías y conocimientos clave <span class="asterisco">*</span></label>
+        <textarea id="tecnologias" name="tecnologias" rows="2" placeholder="Ej: Selenium, Postman, JavaScript básico, SQL, Git..." required></textarea>
+      </div>
+
+      <!-- Fila 3: Experiencia y Nivel Mínimo -->
+      <div class="fila-doble">
+        <div class="campo">
+          <label for="experiencia">Experiencia requerida <span class="asterisco">*</span></label>
+          <input type="text" id="experiencia" name="experiencia" placeholder="Ej: 0-1 año o 1-3 años" required>
+        </div>
+
+        <div class="campo">
+          <label for="nivel-minimo">Nivel Mínimo de formación <span class="asterisco">*</span></label>
+          <input type="text" id="nivel-minimo" name="nivel_minimo" placeholder="Ej: Técnico, Tecnólogo o Profesional" required>
+        </div>
+      </div>
+
+      <!-- Botón de Envío -->
+      <button type="submit" class="boton-enviar" id="btn-submit-vacante">
+        <span class="spinner" id="btn-spinner"></span>
+        <span id="btn-text">💾 Registrar Vacante en Google Sheets</span>
+      </button>
+
+    </form>
+
+    <!-- Tabla_Vacantes (Visualización sincronizada con Google Sheets) -->
+    <div class="tabla-vacantes-header">
+      <h2>📊 Tabla de Vacantes Activas</h2>
+      <span class="pista-texto" id="contador-vacantes">Cargando vacantes...</span>
+    </div>
+
+    <div class="tabla-contenedor">
+      <table class="tabla-candidatos">
+        <thead>
+          <tr>
+            <th>Vacante</th>
+            <th>Código</th>
+            <th>Tecnologías</th>
+            <th>Experiencia</th>
+            <th>Nivel Mínimo</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-vacantes-body">
+          <!-- Las filas se cargan dinámicamente desde Google Sheets vía n8n -->
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <!-- Contenedor para mensajes / alertas -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="nueva-vacante.js"></script>
+</body>
+</html>

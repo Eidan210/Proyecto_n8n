@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postulación a Vacante | Portal de Talento</title>
+  
+  <!-- Fuente moderna y limpia -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="pagina-formulario">
+
+  <!-- Barra de Acciones Superior -->
+  <div class="barra-superior">
+    <div class="nav-grupo">
+      <a href="index.html" class="link-nav activo">💼 Postulación</a>
+      <a href="nueva-vacante.html" class="link-nav">➕ Nueva Vacante</a>
+      <a href="dashboard.html" class="link-nav">📊 Dashboard RRHH</a>
+    </div>
+    <button type="button" id="btn-tema" class="btn-tema" aria-label="Cambiar tema">
+      <span id="icono-tema">🌙</span>
+      <span id="texto-tema">Modo Oscuro</span>
+    </button>
+  </div>
+
+  <main class="contenedor">
+    
+    <header class="encabezado">
+      <div class="icono-encabezado">💼</div>
+      <h1>Formulario de Postulación</h1>
+      <p>Completa tus datos para postularte a nuestras vacantes disponibles.</p>
+    </header>
+
+    <form id="form-postulacion" class="formulario">
+
+      <!-- Fila 1: Nombre y Correo -->
+      <div class="fila-doble">
+        <div class="campo">
+          <label for="nombre">Nombre completo <span class="asterisco">*</span></label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej: Laura Gómez" required>
+        </div>
+
+        <div class="campo">
+          <label for="correo">Correo electrónico <span class="asterisco">*</span></label>
+          <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+        </div>
+      </div>
+
+      <!-- Fila 2: Teléfono y Experiencia -->
+      <div class="fila-doble">
+        <div class="campo">
+          <label for="telefono">Número telefónico <span class="asterisco">*</span></label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Ej: 3001234567" required>
+        </div>
+
+        <div class="campo">
+          <label for="experiencia">Años de experiencia <span class="asterisco">*</span></label>
+          <input type="number" id="experiencia" name="experiencia" min="0" step="0.5" placeholder="Ej: 1.5" required>
+        </div>
+      </div>
+
+      <!-- Vacante -->
+      <div class="campo">
+        <label for="vacante">Vacante a la que aspiras <span class="asterisco">*</span></label>
+        <div class="select-contenedor">
+          <select id="vacante" name="vacante" required>
+            <option value="" disabled selected>Selecciona una opción...</option>
+            <option value="backend-junior">Desarrollador Backend Junior</option>
+            <option value="frontend-junior">Desarrollador Frontend Junior</option>
+            <option value="fullstack-node">Desarrollador Full Stack (Node.js)</option>
+            <option value="analista-datos">Analista de Datos Junior</option>
+            <option value="automatizacion-n8n">Especialista en Automatización (n8n)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Habilidades -->
+      <div class="campo">
+        <label for="habilidades">Tecnologías o habilidades principales</label>
+        <textarea id="habilidades" name="habilidades" rows="3" placeholder="Ej: JavaScript, Node.js, SQL, n8n, Git..."></textarea>
+      </div>
+
+      <!-- Hoja de vida (PDF) -->
+      <div class="campo">
+        <label for="hoja-vida">Hoja de vida (PDF) <span class="asterisco">*</span></label>
+        <div class="subir-archivo" id="dropzone">
+          <input type="file" id="hoja-vida" name="hoja-vida" accept="application/pdf" required>
+          <div class="subir-texto">
+            <span class="subir-titulo">📁 Seleccionar archivo PDF</span>
+            <span class="subir-subtitulo" id="file-status-text">o arrastra tu documento aquí</span>
+          </div>
+        </div>
+        <div id="file-selected-badge" class="archivo-seleccionado" style="display: none;">
+          📄 <span id="file-name-text">archivo.pdf</span>
+          <button type="button" id="btn-remove-file" class="btn-quitar">✕</button>
+        </div>
+      </div>
+
+      <!-- Tratamiento de datos mejorado -->
+      <div class="campo-terminos">
+        <label class="contenedor-checkbox" for="tratamiento-datos">
+          <input type="checkbox" id="tratamiento-datos" name="tratamiento-datos" value="true" required>
+          <div class="checkbox-visual">
+            <svg class="icono-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="texto-terminos">
+            <span class="titulo-terminos">
+              <svg class="icono-escudo" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Tratamiento de Datos Personales <span class="asterisco">*</span>
+            </span>
+            <span class="desc-terminos">
+              Acepto y autorizo el uso de mis datos personales para la postulación a este empleo conforme a las políticas de privacidad.
+            </span>
+          </div>
+        </label>
+      </div>
+
+      <!-- Botón de envío -->
+      <button type="submit" class="boton-enviar" id="btn-submit">
+        <span class="spinner" id="btn-spinner"></span>
+        <span id="btn-text">Enviar postulación</span>
+      </button>
+
+      <!-- Token oculto -->
+      <input type="hidden" name="token" value="TF-2108302026-Secreto">
+
+    </form>
+
+  </main>
+
+  <!-- Contenedor para mensajes / alertas -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

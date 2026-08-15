@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard RRHH - Sistema de Preselección</title>
+  
+  <!-- Fuente Google Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="pagina-dashboard">
+
+  <!-- Encabezado Superior Oscuro del Dashboard -->
+  <header class="dashboard-header-dark">
+    <div class="header-titulos">
+      <h1>Dashboard RRHH</h1>
+      <p>Sistema de preselección de candidatos</p>
+    </div>
+
+    <!-- Menú de Navegación Rápida & Selector de Tema -->
+    <nav class="dashboard-nav">
+      <button type="button" id="btn-recargar" class="link-nav" title="Consultar candidatos a n8n">
+        <span id="icono-recargar">🔄</span> Actualizar
+      </button>
+      <a href="index.html" class="link-nav">💼 Postulación</a>
+      <a href="nueva-vacante.html" class="link-nav">➕ Nueva Vacante</a>
+      <button type="button" id="btn-tema" class="btn-tema" aria-label="Cambiar tema">
+        <span id="icono-tema">🌙</span>
+        <span id="texto-tema">Modo Oscuro</span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Contenedor Principal del Dashboard -->
+  <main class="dashboard-cuerpo">
+
+    <!-- 1. Tarjetas de Métricas KPI -->
+    <section class="kpi-grid" aria-label="Métricas Principales">
+      <div class="kpi-card">
+        <span class="kpi-label">Total candidatos</span>
+        <span class="kpi-valor" id="kpi-total">0</span>
+      </div>
+
+      <div class="kpi-card">
+        <span class="kpi-label">Score promedio</span>
+        <span class="kpi-valor" id="kpi-score">0%</span>
+      </div>
+
+      <div class="kpi-card">
+        <span class="kpi-label">Analizados</span>
+        <span class="kpi-valor" id="kpi-analizados">0</span>
+      </div>
+
+      <div class="kpi-card">
+        <span class="kpi-label">Aceptados</span>
+        <span class="kpi-valor" id="kpi-aceptados">0</span>
+      </div>
+
+      <div class="kpi-card">
+        <span class="kpi-label">Rechazados</span>
+        <span class="kpi-valor" id="kpi-rechazados">0</span>
+      </div>
+    </section>
+
+    <!-- 2. Filtros y Búsqueda -->
+    <section class="filtros-card">
+      <div class="filtro-control">
+        <label for="filtro-vacante">Vacante</label>
+        <select id="filtro-vacante">
+          <option value="todas">Todas</option>
+          <option value="Backend junior">Backend junior</option>
+          <option value="Frontend junior">Frontend junior</option>
+          <option value="Fullstack node">Fullstack node</option>
+          <option value="Analista de datos">Analista de datos</option>
+          <option value="Automatizacion n8n">Automatización n8n</option>
+        </select>
+      </div>
+
+      <div class="filtro-control">
+        <label for="filtro-estado">Estado</label>
+        <select id="filtro-estado">
+          <option value="todos">Todos</option>
+          <option value="Aceptado">Aceptado</option>
+          <option value="Analizado">Analizado</option>
+          <option value="Rechazado">Rechazado</option>
+        </select>
+      </div>
+
+      <div class="filtro-control filtro-buscar">
+        <label for="filtro-buscar">Buscar candidato</label>
+        <input type="text" id="filtro-buscar" placeholder="Nombre o ID...">
+      </div>
+    </section>
+
+    <!-- 3. Tabla de Candidatos -->
+    <section class="candidatos-card">
+      <h2>Candidatos</h2>
+
+      <div class="tabla-contenedor">
+        <table class="tabla-candidatos">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Vacante</th>
+              <th>Experiencia</th>
+              <th>Score</th>
+              <th>Estado</th>
+              <th>Revisión RRHH</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-candidatos-body">
+            <!-- Los candidatos se cargarán dinámicamente desde n8n -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Contenedor para toasts / avisos -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

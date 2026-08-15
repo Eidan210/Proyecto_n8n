@@ -1,0 +1,1866 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI",
+          "mode": "list",
+          "cachedResultName": "Proyecto N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID_Candidato": "={{ $json.ID_Candidato }}",
+            "Nombre": "={{ $json.Nombre }}",
+            "Correo": "={{ $json.Correo }}",
+            "Telefono": "={{ $json.Telefono }}",
+            "Vacante": "={{ $json.Vacante }}",
+            "Experiencia": "={{ $json.Experiencia }}",
+            "Habilidades": "={{ $json.Habilidades }}",
+            "Nivel_Educativo": "={{ $json.Nivel_Educativo }}",
+            "Score_Compatibilidad": "={{ $json.Score_Compatibilidad }}",
+            "Estado": "={{ $json.Estado }}",
+            "Fecha_Postulacion": "={{ $json.Fecha_Postulacion }}",
+            "Observaciones_IA": "={{ $json.Observaciones_IA }}",
+            "Revision_RRHH": "={{ $json.Revision_RRHH }}"
+          },
+          "matchingColumns": [
+            "ID_Candidato"
+          ],
+          "schema": [
+            {
+              "id": "ID_Candidato",
+              "displayName": "ID_Candidato",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Telefono",
+              "displayName": "Telefono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Vacante",
+              "displayName": "Vacante",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Experiencia",
+              "displayName": "Experiencia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Habilidades",
+              "displayName": "Habilidades",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nivel_Educativo",
+              "displayName": "Nivel_Educativo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Score_Compatibilidad",
+              "displayName": "Score_Compatibilidad",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Estado",
+              "displayName": "Estado",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fecha_Postulacion",
+              "displayName": "Fecha_Postulacion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Observaciones_IA",
+              "displayName": "Observaciones_IA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Revision_RRHH",
+              "displayName": "Revision_RRHH",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        752,
+        1168
+      ],
+      "id": "2a136f91-e1f8-4423-bf6e-de792e69feca",
+      "name": "Append or update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "dyMGwccB2xEXoasA",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.Correo }}",
+        "subject": "=Postulación recibida - {{ $json.Vacante }}",
+        "message": "=<div style=\"font-family: -apple-system, 'Segoe UI', Arial, sans-serif; max-width: 580px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;\"><div style=\"background-color: #14213d; padding: 24px; text-align: center;\"><h2 style=\"color: #ffffff; margin: 0; font-size: 20px;\">Confirmación de Postulación</h2><p style=\"color: #9aa3b2; margin: 6px 0 0 0; font-size: 13px;\">Campuslands · Gestión de Talento</p></div><div style=\"padding: 28px; color: #334155; font-size: 15px; line-height: 1.6;\"><p style=\"margin-top: 0;\">Hola <strong>{{ $json.Nombre }}</strong>,</p><p>Hemos recibido correctamente tu postulación e información para la vacante de <strong>{{ $json.Vacante }}</strong>.</p><div style=\"background-color: #f8fafc; border-left: 4px solid #14213d; padding: 12px 16px; margin: 20px 0; border-radius: 4px;\"><span style=\"font-size: 12px; color: #64748b; text-transform: uppercase; font-weight: 600;\">Código de seguimiento:</span><br><strong style=\"font-size: 16px; color: #0f172a;\">{{ $json.ID_Candidato }}</strong></div><p>Nuestro equipo de Recursos Humanos revisará tu hoja de vida. En caso de avanzar a la siguiente fase, te contactaremos por este medio.</p><p style=\"margin-bottom: 0;\">¡Gracias por tu interés en hacer parte de nuestro equipo!</p></div><div style=\"background-color: #f1f5f9; padding: 16px; text-align: center; font-size: 12px; color: #64748b;\">Este es un mensaje automático de confirmación. Por favor no respondas a este correo.</div></div>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        976,
+        1072
+      ],
+      "id": "55ab41ab-4e13-432f-8ad6-6e6921eda49b",
+      "name": "Confirmacion Candidato",
+      "webhookId": "70415169-cc82-4f9c-9eb8-46d5b683bcc1",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "5fiAq4Oc6X2kDPKH",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "eidancuadros21@gmail.com",
+        "subject": "=[RRHH] Evaluación Candidato {{ $json.ID_Candidato }} - {{ $json.Nombre }}",
+        "message": "=<div style=\"font-family: -apple-system, 'Segoe UI', Arial, Helvetica, sans-serif; background-color: #eef0f2; padding: 40px 0; margin: 0;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\"><tr><td align=\"center\"><table role=\"presentation\" width=\"560\" cellpadding=\"0\" cellspacing=\"0\" style=\"background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06);\"><tr><td style=\"background-color: #14213d; padding: 28px 32px;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\"><tr><td><p style=\"margin: 0; color: #8fa3d1; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600;\">Sistema de Preselección · RR. HH.</p><p style=\"margin: 6px 0 0 0; color: #ffffff; font-size: 20px; font-weight: 700;\">Nueva postulación analizada</p></td><td align=\"right\" valign=\"top\"><span style=\"display: inline-block; background-color: #1f2b4d; color: #b7c4e6; font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 20px; border: 1px solid #2c3b66;\">{{ $json.ID_Candidato }}</span></td></tr></table></td></tr><tr><td style=\"padding: 0;\"><div style=\"background-color: {{ $json.Score_Compatibilidad >= 80 ? '#eafaf1' : ($json.Score_Compatibilidad >= 60 ? '#fff8e6' : '#fdecec') }}; padding: 18px 32px; border-bottom: 1px solid #eee;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\"><tr><td valign=\"middle\"><span style=\"display: inline-block; width: 10px; height: 10px; border-radius: 50%; background-color: {{ $json.Score_Compatibilidad >= 80 ? '#16a34a' : ($json.Score_Compatibilidad >= 60 ? '#ca8a04' : '#dc2626') }}; margin-right: 8px;\"></span><span style=\"font-size: 14px; font-weight: 700; color: {{ $json.Score_Compatibilidad >= 80 ? '#15803d' : ($json.Score_Compatibilidad >= 60 ? '#a16207' : '#b91c1c') }};\">{{ $json.Estado }}</span></td><td align=\"right\" valign=\"middle\"><span style=\"font-size: 26px; font-weight: 800; color: {{ $json.Score_Compatibilidad >= 80 ? '#15803d' : ($json.Score_Compatibilidad >= 60 ? '#a16207' : '#b91c1c') }};\">{{ $json.Score_Compatibilidad }}<span style=\"font-size: 14px; font-weight: 600;\">%</span></span></td></tr></table></div></td></tr><tr><td style=\"padding: 28px 32px 8px 32px;\"><p style=\"margin: 0 0 16px 0; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #9aa3b2; font-weight: 700;\">Datos del candidato</p><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"font-size: 14px; color: #1f2937;\"><tr><td style=\"padding: 9px 0; width: 150px; color: #6b7280;\">Nombre</td><td style=\"padding: 9px 0; font-weight: 700; text-align: right;\">{{ $json.Nombre }}</td></tr><tr><td colspan=\"2\" style=\"border-bottom: 1px solid #f1f2f4;\"></td></tr><tr><td style=\"padding: 9px 0; color: #6b7280;\">Correo</td><td style=\"padding: 9px 0; text-align: right;\">{{ $json.Correo }}</td></tr><tr><td colspan=\"2\" style=\"border-bottom: 1px solid #f1f2f4;\"></td></tr><tr><td style=\"padding: 9px 0; color: #6b7280;\">Teléfono</td><td style=\"padding: 9px 0; text-align: right;\">{{ $json.Telefono }}</td></tr><tr><td colspan=\"2\" style=\"border-bottom: 1px solid #f1f2f4;\"></td></tr><tr><td style=\"padding: 9px 0; color: #6b7280;\">Vacante</td><td style=\"padding: 9px 0; font-weight: 700; text-align: right;\">{{ $json.Vacante }}</td></tr><tr><td colspan=\"2\" style=\"border-bottom: 1px solid #f1f2f4;\"></td></tr><tr><td style=\"padding: 9px 0; color: #6b7280;\">Experiencia</td><td style=\"padding: 9px 0; text-align: right;\">{{ $json.Experiencia }} años</td></tr><tr><td colspan=\"2\" style=\"border-bottom: 1px solid #f1f2f4;\"></td></tr><tr><td style=\"padding: 9px 0; color: #6b7280;\">Educación</td><td style=\"padding: 9px 0; text-align: right;\">{{ $json.Nivel_Educativo }}</td></tr></table></td></tr><tr><td style=\"padding: 20px 32px 8px 32px;\"><p style=\"margin: 0 0 10px 0; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #9aa3b2; font-weight: 700;\">Habilidades detectadas</p><p style=\"margin: 0; font-size: 14px; color: #1f2937; line-height: 1.6; background-color: #f7f8fa; padding: 12px 14px; border-radius: 8px;\">{{ $json.Habilidades }}</p></td></tr><tr><td style=\"padding: 20px 32px 28px 32px;\"><p style=\"margin: 0 0 10px 0; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #9aa3b2; font-weight: 700;\">Observaciones de la IA</p><p style=\"margin: 0; font-size: 14px; color: #374151; line-height: 1.6; border-left: 3px solid #14213d; padding: 4px 0 4px 14px;\">{{ $json.Observaciones_IA }}</p></td></tr><tr><td style=\"padding: 20px 32px; background-color: #f7f8fa; border-top: 1px solid #eee;\"><p style=\"margin: 0; font-size: 12px; color: #9aa3b2; line-height: 1.6;\">Este análisis fue generado automáticamente y debe ser validado por RRHH.</p></td></tr></table><p style=\"margin: 16px 0 0 0; font-size: 11px; color: #b0b6bf;\">Campuslands · Sistema automatizado de gestión de talento</p></td></tr></table></div>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        976,
+        1264
+      ],
+      "id": "938c39b4-ff69-40f1-8b2e-160f28e8fc86",
+      "name": "Notificacion RRHH",
+      "webhookId": "c38211c0-29a6-454e-a1fc-9aefe7b9a419",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "5fiAq4Oc6X2kDPKH",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "document",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-3.5-flash-lite",
+          "mode": "list",
+          "cachedResultName": "models/gemini-3.5-flash-lite"
+        },
+        "text": "=Eres un asistente de Recursos Humanos especializado en analizar hojas de vida.\n\nSe te adjunta un documento PDF que corresponde a la hoja de vida del candidato.\nAnaliza su contenido para extraer información objetiva y verificable, sin hacer juicios de valor ni inferencias no soportadas por el texto.\n\nReglas obligatorias:\n1. Solo debes basarte en la información presente en el documento PDF adjunto.\n2. No debes inventar datos que no estén explícitamente mencionados.\n3. No debes utilizar como criterio de análisis: género, edad, fotografía, estado civil, nacionalidad, religión, orientación sexual, discapacidad u otras características personales protegidas.\n4. El \"compatibilidad\" debe calcularse comparando las habilidades y experiencia detectadas en el CV contra los requisitos de la vacante proporcionados, y debe ser un número entero entre 0 y 100.\n5. Si existe diferencia entre lo declarado en el formulario y lo encontrado en el CV adjunto, prioriza siempre la información respaldada por el documento PDF.\n6. Responde ÚNICAMENTE con un objeto JSON válido, sin texto adicional, sin explicaciones, sin markdown ni bloques de código.\n\nDatos de la postulación:\n- Vacante: {{ $('Postularse').item.json.body.vacante }}\n- Experiencia declarada: {{ $('Postularse').item.json.body.experiencia }} años\n- Habilidades declaradas: {{ $('Postularse').item.json.body.habilidades }}\n\nRequerimientos por vacante:\n- backend-junior: Java o Python, Spring Boot o Django, SQL, PostgreSQL, APIs REST, Git. Experiencia: 0-2 años. Nivel mínimo: Técnico.\n- frontend-junior: HTML, CSS, JavaScript, React o Vue.js, diseño responsive, Git. Experiencia: 0-2 años. Nivel mínimo: Técnico.\n- fullstack-node: JavaScript, Node.js, Express, React o Angular, PostgreSQL o MongoDB, APIs REST, Git. Experiencia: 1-3 años. Nivel mínimo: Tecnólogo.\n- analista-datos: Python, SQL, Excel avanzado, Power BI o Tableau, estadística básica, Git. Experiencia: 0-2 años. Nivel mínimo: Técnico.\n- automatizacion-n8n: n8n, APIs REST, JavaScript básico, integración de servicios, SQL, Git. Experiencia: 1-2 años. Nivel mínimo: Técnico.\n\nCompara el perfil del candidato (según el CV adjunto) contra los requerimientos de la vacante indicada para calcular el score de compatibilidad.\n\nFormato de salida obligatorio (JSON):\n{\n  \"experiencia_anios\": number,\n  \"habilidades\": string[],\n  \"nivel_educativo\": string,\n  \"compatibilidad\": number,\n  \"resumen_perfil\": string,\n  \"preguntas_entrevista\": string[],\n  \"observaciones\": string\n}",
+        "inputType": "binary",
+        "binaryPropertyName": "hoja-vida",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        -592,
+        1168
+      ],
+      "id": "6d28ea76-994b-4fa4-8e65-7e5a06005c6e",
+      "name": "Analyze document1",
+      "retryOnFail": true,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Oj5kRBoKN8A11f1Q",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const textoRespuesta = $input.first().json.content.parts[0].text;\nconst textoLimpio = textoRespuesta.replace(/```json\\s*/gi, '').replace(/```\\s*/gi, '').trim();\nlet datos = {};\ntry {\n  datos = JSON.parse(textoLimpio);\n} catch (error) {\n  datos = {\n    experiencia_anios: 0,\n    habilidades: [],\n    nivel_educativo: 'No especificado',\n    compatibilidad: 0,\n    resumen_perfil: 'Sin resumen disponible',\n    preguntas_entrevista: [],\n    observaciones: 'Error al procesar JSON'\n  };\n}\n\nreturn [{\n  json: {\n    experiencia_anios: Number(datos.experiencia_anios) || 0,\n    habilidades: Array.isArray(datos.habilidades) ? datos.habilidades.join(', ') : (datos.habilidades || ''),\n    nivel_educativo: datos.nivel_educativo || 'No especificado',\n    compatibilidad: Number(datos.compatibilidad) || 0,\n    resumen_perfil: datos.resumen_perfil || '',\n    preguntas_entrevista: Array.isArray(datos.preguntas_entrevista) ? datos.preguntas_entrevista.join(' | ') : (datos.preguntas_entrevista || ''),\n    observaciones: datos.observaciones || ''\n  }\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -368,
+        1168
+      ],
+      "id": "f7bb4246-018a-4457-bc1a-766b4bc6fc23",
+      "name": "Code in JavaScript1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "59847d02",
+              "name": "ticket",
+              "value": "=TF-{{ $now.toFormat('yyyy') }}-{{ $execution.id }}",
+              "type": "string"
+            },
+            {
+              "id": "ce737f02",
+              "name": "Nombre",
+              "value": "={{ $('Postularse').item.json.body.nombre }}",
+              "type": "string"
+            },
+            {
+              "id": "b341b720",
+              "name": "Habilidades",
+              "value": "={{ $json.habilidades }}",
+              "type": "string"
+            },
+            {
+              "id": "c5d83777",
+              "name": "Nivel Educativo",
+              "value": "={{ $json.nivel_educativo }}",
+              "type": "string"
+            },
+            {
+              "id": "1d9f755b",
+              "name": "Compatibilidad Vacante",
+              "value": "={{ $json.compatibilidad }}",
+              "type": "number"
+            },
+            {
+              "id": "a99dd6cc",
+              "name": "Observaciones",
+              "value": "={{ $json.observaciones }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -144,
+        1168
+      ],
+      "id": "54b34416-5974-43a9-8166-5e824acbc749",
+      "name": "Edit Fields2"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "c4bf5bf7",
+                    "leftValue": "={{ $json.compatibilidad }}",
+                    "rightValue": 80,
+                    "operator": {
+                      "type": "number",
+                      "operation": "gte"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Compatibilidad Alta"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "9e39894c",
+                    "leftValue": "={{ $json.compatibilidad }}",
+                    "rightValue": 60,
+                    "operator": {
+                      "type": "number",
+                      "operation": "gte"
+                    }
+                  },
+                  {
+                    "id": "7a29810c",
+                    "leftValue": "={{ $json.compatibilidad }}",
+                    "rightValue": 79,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lte"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Compatibilidad Media"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "4f777b9c",
+                    "leftValue": "={{ $json.compatibilidad }}",
+                    "rightValue": 60,
+                    "operator": {
+                      "type": "number",
+                      "operation": "lt"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Compatibilidad Baja"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        80,
+        1152
+      ],
+      "id": "f8f48ba1-6279-4d28-9ffe-6adb975c871c",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "e52a60f6",
+              "name": "Revision",
+              "value": "RECOMENDADO PARA REVISIÓN PRIORITARIA",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        304,
+        976
+      ],
+      "id": "ec3b17f0-e94a-496e-8404-ccb868737e05",
+      "name": "Alta1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1d3fc20d",
+              "name": "Revision",
+              "value": "REVISIÓN MANUAL",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        304,
+        1168
+      ],
+      "id": "8c040dc6-5b24-4b04-b370-fdf9259628c3",
+      "name": "Media1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ba746d71",
+              "name": "Revision",
+              "value": "REVISIÓN SECUNDARIA",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        304,
+        1360
+      ],
+      "id": "495f4ecd-f755-4423-8675-6daef275ca54",
+      "name": "Baja1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1d3fc20d",
+              "name": "ID_Candidato",
+              "value": "={{ $json.ticket }}",
+              "type": "string"
+            },
+            {
+              "id": "d055890c",
+              "name": "Nombre",
+              "value": "={{ $json.Nombre }}",
+              "type": "string"
+            },
+            {
+              "id": "ee89289d",
+              "name": "Correo",
+              "value": "={{ $('Postularse').item.json.body.correo }}",
+              "type": "string"
+            },
+            {
+              "id": "c1072d2c",
+              "name": "Telefono",
+              "value": "={{ $('Postularse').item.json.body.telefono }}",
+              "type": "string"
+            },
+            {
+              "id": "21a3f9bc",
+              "name": "Vacante",
+              "value": "={{ $('Postularse').item.json.body.vacante }}",
+              "type": "string"
+            },
+            {
+              "id": "ae646c01",
+              "name": "Experiencia",
+              "value": "={{ $json.experiencia_anios }}",
+              "type": "number"
+            },
+            {
+              "id": "84c844a0",
+              "name": "Habilidades",
+              "value": "={{ $json.Habilidades }}",
+              "type": "string"
+            },
+            {
+              "id": "09b1fc69",
+              "name": "Nivel_Educativo",
+              "value": "={{ $json['Nivel Educativo'] }}",
+              "type": "string"
+            },
+            {
+              "id": "d641044a",
+              "name": "Score_Compatibilidad",
+              "value": "={{ $json['Compatibilidad Vacante'] }}",
+              "type": "number"
+            },
+            {
+              "id": "5fd47ea6",
+              "name": "Estado",
+              "value": "={{ $json.Revision }}",
+              "type": "string"
+            },
+            {
+              "id": "7eb65f78",
+              "name": "Fecha_Postulacion",
+              "value": "={{ $now.toFormat('yyyy-MM-dd HH:mm:ss') }}",
+              "type": "string"
+            },
+            {
+              "id": "d89ea7f8",
+              "name": "Observaciones_IA",
+              "value": "={{ $json.resumen_perfil + ' | ' + $json.observaciones }}",
+              "type": "string"
+            },
+            {
+              "id": "a8d2f605",
+              "name": "Revision_RRHH",
+              "value": "=",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        528,
+        1168
+      ],
+      "id": "82cac7ba-96c8-42eb-8882-283125a498c5",
+      "name": "Normalizacion1"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI",
+          "mode": "list",
+          "cachedResultName": "Proyecto N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Correo",
+              "lookupValue": "={{ $json.body.correo }}"
+            },
+            {
+              "lookupColumn": "Vacante",
+              "lookupValue": "={{ $json.body.vacante }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -1488,
+        1072
+      ],
+      "id": "2c1a9c3a-ce5d-43a3-989e-48bbc773ab1a",
+      "name": "Get row(s) in sheet",
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "dyMGwccB2xEXoasA",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "34ba4c32-6e62-4f21-9516-5d071cd8bae6",
+              "leftValue": "={{ $json.Correo }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "8c857a03-5c2f-41eb-8aa3-512a4bcd11c3",
+              "leftValue": "={{ $json.Vacante }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -1264,
+        1072
+      ],
+      "id": "c9ee26c2-f11f-4a7b-8a1e-c5f37d92cdd0",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "errorMessage": "Este Gmail ya está registrado.. "
+      },
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        -1040,
+        976
+      ],
+      "id": "8047bb03-d2bd-405b-b721-cc97dd171163",
+      "name": "Stop and Error"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Recupera el binario original del Webhook, que se perdió al pasar por Google Sheets\nconst binaryOriginal = $('Postularse').item.binary;\n\nreturn [{\n  json: $input.item.json,\n  binary: binaryOriginal\n}];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -816,
+        1168
+      ],
+      "id": "8fe350af-075b-4b6f-a3a3-3e147b01e4e6",
+      "name": "Code in JavaScript2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "a1111111-1111-1111-1111-111111111111",
+              "leftValue": "={{ $json.body.nombre }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "a2222222-2222-2222-2222-222222222222",
+              "leftValue": "={{ $json.body.correo }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "a3333333-3333-3333-3333-333333333333",
+              "leftValue": "={{ $json.body.telefono }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "a4444444-4444-4444-4444-444444444444",
+              "leftValue": "={{ $json.body.vacante }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "a5555555-5555-5555-5555-555555555555",
+              "leftValue": "={{ $json.body.experiencia }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "a6666666-6666-6666-6666-666666666666",
+              "leftValue": "={{ $json.body.habilidades }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "a7777777-7777-7777-7777-777777777777",
+              "leftValue": "={{ $json.body['tratamiento-datos'] }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "a8888888-8888-8888-8888-888888888888",
+              "leftValue": "={{ $binary['hoja-vida'] !== undefined }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "32770933-d6eb-40a4-9068-fa757301d88a",
+              "leftValue": "={{ $json.body.token }}",
+              "rightValue": "TF-2108302026-Secreto",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        -1712,
+        1168
+      ],
+      "id": "c54b31a8-f3af-453e-8c88-bda196035df3",
+      "name": "Validar Datos"
+    },
+    {
+      "parameters": {
+        "errorMessage": "Faltan datos obligatorios o no se adjuntó la hoja de vida en PDF."
+      },
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        -1488,
+        1264
+      ],
+      "id": "1c466f1b-3884-4649-b130-e0a2984edb86",
+      "name": "Stop and Error - Validacion"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"status\": \"ok\",\n  \"mensaje\": \"Postulación recibida correctamente. Te contactaremos pronto.\",\n  \"ticket\": \"En proceso de asignación\"\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        -1040,
+        1168
+      ],
+      "id": "cec50fac-eb70-4a68-806e-6a201c4cef6d",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "chatId": "8746425110",
+        "text": "=🚨 *Nueva Postulación Recibida*\n👤 *Candidato:* {{ $('Normalizacion1').item.json.Nombre }}\n💼 *Vacante:* {{ $('Normalizacion1').item.json.Vacante }}\n📊 *Score:* {{ $('Normalizacion1').item.json.Score_Compatibilidad }}%\n📌 *Recomendación:* {{ $('Normalizacion1').item.json.Revision }}, {{ $('Normalizacion1').item.json.Observaciones }}\n🆔 *Ticket:* `{{ $('Normalizacion1').item.json.ID_Candidato }}`",
+        "additionalFields": {}
+      },
+      "id": "55350266-9b69-40a0-8f3e-0f410695b8f6",
+      "name": "Enviar a Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1200,
+        1264
+      ],
+      "webhookId": "1c80133e-3351-4fa8-8304-d9c2feb42682",
+      "credentials": {
+        "telegramApi": {
+          "id": "3ho8yDN74nAGl3Cm",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI",
+          "mode": "list",
+          "cachedResultName": "Proyecto N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Candidatos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -1712,
+        2464
+      ],
+      "id": "267cc84d-6c6d-4440-994a-990b66122a0a",
+      "name": "Get row(s) in sheet1",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "dyMGwccB2xEXoasA",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($input.all().map(i => i.json)) }}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        -1264,
+        2464
+      ],
+      "id": "50ec53ce-3da2-46e2-8e6a-9a147333e542",
+      "name": "Respond to Webhook1"
+    },
+    {
+      "parameters": {
+        "jsCode": "return $input.all().map(item => {\n  const row = item.json;\n\n  // Extrae y limpia el Score_Compatibilidad de Google Sheets\n  const rawScore = row.Score_Compatibilidad || row.Score || row.score || 0;\n  const scoreNumero = typeof rawScore === 'string'\n    ? parseFloat(rawScore.replace('%', '').trim()) || 0\n    : Number(rawScore || 0);\n\n  return {\n    json: {\n      id: row.ID_Candidato || row.ID || row.id || 'N/A',\n      nombre: row.Nombre || row.nombre || 'Sin nombre',\n      vacante: row.Vacante || row.vacante || 'No especificada',\n      experiencia: row.Experiencia || row.experiencia || '0 años',\n      score: scoreNumero,\n      estado: row.Estado || row.estado || 'Pendiente',\n      // ✅ Clave para leer la columna de Google Sheets:\n      revision: row.Revision_RRHH || row['Revisión RRHH'] || row['Revision RRHH'] || row.Revision || 'Sin revisar'\n    }\n  };\n});"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1488,
+        2464
+      ],
+      "id": "c852a73b-2ab3-41e1-ac7b-0611b1550d6c",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "path": "9465088c-85c4-4849-9743-dc4a79c2361a",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1936,
+        2464
+      ],
+      "id": "f049938a-5c20-4ee3-adde-7f1cfdf60805",
+      "name": "DashBoard",
+      "webhookId": "9465088c-85c4-4849-9743-dc4a79c2361a"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI",
+          "mode": "list",
+          "cachedResultName": "Proyecto N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1504281780,
+          "mode": "list",
+          "cachedResultName": "Vacantes",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI/edit#gid=1504281780"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -1712,
+        2016
+      ],
+      "id": "055a99b5-8176-4dd2-bdd9-ddda865da24f",
+      "name": "Get row(s) in sheet2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "dyMGwccB2xEXoasA",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return $input.all().map(item => {\n  const row = item.json;\n\n  return {\n    json: {\n      vacante: row.Vacante || row.vacante || 'Sin título',\n      codigo: row['Código'] || row.Codigo || row.codigo || 'sin-codigo',\n      tecnologias: row['Tecnologías'] || row.Tecnologias || row.tecnologias || 'No especificadas',\n      experiencia: row.Experier || row.Experiencia || row.experiencia || '0 años',\n      nivel_minimo: row['Nivel_Mínimo'] || row['Nivel_Minimo'] || row.Nivel_Míni || row.nivel_minimo || 'Técnico'\n    }\n  };\n});\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1488,
+        2016
+      ],
+      "id": "3c58d735-ac58-4ab7-a98f-764db5b2fb9d",
+      "name": "Code in JavaScript3"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($input.all().map(item => item.json)) }}\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        -1264,
+        2016
+      ],
+      "id": "429497e6-3702-4092-8e9f-1b75e2d7a301",
+      "name": "Respond to Webhook2"
+    },
+    {
+      "parameters": {
+        "path": "3a9f40c0-aa9c-4151-8cde-cd3fca0e4a4e",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1936,
+        2016
+      ],
+      "id": "f0b6eff6-df66-45fc-a18b-0ee445cdf20b",
+      "name": "Vacantes Disponibles",
+      "webhookId": "3a9f40c0-aa9c-4151-8cde-cd3fca0e4a4e"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "7ade266f-9b3a-48e9-b47e-c755c23932a1",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1936,
+        2240
+      ],
+      "id": "b84f8144-6c59-4393-a487-8546fb0bc6b4",
+      "name": "Webhook Crear Vacante",
+      "webhookId": "7ade266f-9b3a-48e9-b47e-c755c23932a1"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI",
+          "mode": "list",
+          "cachedResultName": "Proyecto N8N"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1504281780,
+          "mode": "list",
+          "cachedResultName": "Vacantes",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI/edit#gid=1504281780"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Vacante": "={{ $json.body.Vacante || $json.body.vacante }}",
+            "Código": "={{ $json.body['Código'] || $json.body.codigo }}",
+            "Tecnologías": "={{ $json.body['Tecnologías'] || $json.body.tecnologias }}",
+            "Nivel_Mínimo": "={{ $json.body['Nivel_Mínimo'] || $json.body.nivel_minimo }}",
+            "Experiencia": "={{ $json.body.Experiencia }}"
+          },
+          "matchingColumns": [
+            "Vacante"
+          ],
+          "schema": [
+            {
+              "id": "Vacante",
+              "displayName": "Vacante",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Código",
+              "displayName": "Código",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Tecnologías",
+              "displayName": "Tecnologías",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Experiencia",
+              "displayName": "Experiencia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Nivel_Mínimo",
+              "displayName": "Nivel_Mínimo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -1712,
+        2240
+      ],
+      "id": "5f1ebc8e-6b21-43da-8009-63b8f9aa435a",
+      "name": "Append row in Tabla_Vacantes",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "dyMGwccB2xEXoasA",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ success: true, message: 'Vacante creada exitosamente' }) }}",
+        "options": {
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "*"
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        -1488,
+        2240
+      ],
+      "id": "ad8dd9b0-fb84-4de8-b3b4-12a5177483e9",
+      "name": "Respond to Webhook3"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "7f6f1634-9472-4fcb-a3b5-a3e055c9b8f4",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1936,
+        1168
+      ],
+      "id": "e20f9b4e-e61e-44d8-92d4-7f08c6db55f6",
+      "name": "Postularse",
+      "webhookId": "7f6f1634-9472-4fcb-a3b5-a3e055c9b8f4"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.message.text }}",
+        "options": {
+          "systemMessage": "=Eres el Asistente Inteligente de Recursos Humanos de Campuslands.\nTu misión es gestionar consultas, actualización de estados de candidatos y administración de vacantes consultando y ejecutando OBLIGATORIAMENTE las herramientas de Google Sheets disponibles.\n\nHERRAMIENTAS DISPONIBLES:\n- \"Buscar Candidatos\": úsala para CUALQUIER consulta, búsqueda o listado de candidatos (por ID, nombre, o para listar varios). Es de SOLO LECTURA. Úsala siempre primero.\n- \"Consultar Candidatos\": úsala ÚNICAMENTE cuando el usuario pida explícitamente MODIFICAR la columna \"Revision_RRHH\" de un candidato. Requiere el Nombre exacto del candidato y el nuevo valor de Revision_RRHH.\n- \"Consultar Vacantes\": úsala para listar o crear vacantes.\n\n==================================================\n1. CONSULTAS DE CANDIDATOS\n==================================================\n• Para cualquier consulta, usa SIEMPRE \"Buscar Candidatos\".\n• Si existe, entrega su ficha limpia:\n  👤 Candidato: [Nombre]\n  💼 Vacante: [Vacante]\n  🎯 Score de Compatibilidad: [Score]%\n  ⏱ Experiencia: [Experiencia] años\n  🛠 Habilidades: [Habilidades]\n  🚦 Estado: [Estado] | Revisión RRHH: [Revision_RRHH]\n  📝 Observaciones: [Observaciones_IA]\n• Si no se encuentra: \"No se encontró ningún candidato registrado con ese identificador o nombre.\"\n\n==================================================\n2. ACTUALIZACIÓN DE REVISIÓN RRHH\n==================================================\nCuando te pidan actualizar el estado de revisión (ej. 'Contratado', 'Rechazado', 'En entrevista'):\n  PASO 1: Consulta primero con \"Buscar Candidatos\" para validar que el candidato exista y obtener su nombre exacto.\n  PASO 2: Ejecuta \"Consultar Candidatos\" enviando el Nombre exacto y el nuevo valor para Revision_RRHH.\n  PASO 3: Confirma al usuario el cambio aplicado de forma limpia.\n\n==================================================\n3. GESTIÓN Y CREACIÓN DE VACANTES\n==================================================\n• Consulta siempre \"Consultar Vacantes\" antes de registrar una nueva para evitar duplicados.\n\n==================================================\n4. SEGURIDAD Y FORMATO (TELEGRAM)\n==================================================\n• No uses guiones bajos sueltos ni markdown complejo.\n• Usa viñetas simples (•), negritas y emojis limpios."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -1520,
+        1584
+      ],
+      "id": "3d1d0f7e-9a4b-4ec1-9926-cf8400d2e18b",
+      "name": "AI Agent2"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-3.5-flash-lite",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        -1712,
+        1808
+      ],
+      "id": "6e6ed58e-2e95-45bf-85d3-31cdd1bfdc3c",
+      "name": "Google Gemini Chat Model2",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "Oj5kRBoKN8A11f1Q",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $json.message.from.id }}",
+        "contextWindowLength": 4
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -1584,
+        1808
+      ],
+      "id": "54525442-ae54-4ba3-9fdc-bf444440d282",
+      "name": "Window Buffer Memory2"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI",
+          "mode": "list",
+          "cachedResultName": "Proyecto N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Candidatos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Nombre', 'Nombre exacto del candidato registrado a actualizar', 'string') }}",
+            "Revision_RRHH": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Revision_RRHH', 'Nuevo estado o nota para la columna Revision_RRHH (ej: Contratado, Rechazado, En entrevista)', 'string') }}"
+          },
+          "matchingColumns": [
+            "Nombre"
+          ],
+          "schema": [
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Revision_RRHH",
+              "displayName": "Revision_RRHH",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        -1456,
+        1808
+      ],
+      "id": "2226e6e8-e8b9-4df7-92cf-877de7e7721f",
+      "name": "Consultar Candidatos2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "dyMGwccB2xEXoasA",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI",
+          "mode": "list",
+          "cachedResultName": "Proyecto N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1504281780,
+          "mode": "list",
+          "cachedResultName": "Vacantes",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI/edit#gid=1504281780"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Vacante": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Vacante__using_to_match_', ``, 'string') }}",
+            "Código": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('C_digo', ``, 'string') }}",
+            "Tecnologías": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Tecnolog_as', ``, 'string') }}",
+            "Experiencia": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Experiencia', ``, 'string') }}",
+            "Nivel_Mínimo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Nivel_M_nimo', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "Vacante"
+          ],
+          "schema": [
+            {
+              "id": "Vacante",
+              "displayName": "Vacante",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Código",
+              "displayName": "Código",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Tecnologías",
+              "displayName": "Tecnologías",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Experiencia",
+              "displayName": "Experiencia",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nivel_Mínimo",
+              "displayName": "Nivel_Mínimo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        -1328,
+        1808
+      ],
+      "id": "fdd804b4-3cae-4041-b42b-75f7b1d12d96",
+      "name": "Consultar Vacantes2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "dyMGwccB2xEXoasA",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger2').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -992,
+        1696
+      ],
+      "id": "e9cf36e8-433c-4c52-8ae8-76d255364c65",
+      "name": "Enviar Respuesta Telegram2",
+      "webhookId": "b9684f3a-7385-4cea-a801-d3de1fc7c03a",
+      "credentials": {
+        "telegramApi": {
+          "id": "3ho8yDN74nAGl3Cm",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -1936,
+        1696
+      ],
+      "id": "90d750ab-aa67-422e-b7fa-8858890079ce",
+      "name": "Telegram Trigger2",
+      "webhookId": "5b276d3a-ce8c-4527-8426-bf2c46a63679",
+      "credentials": {
+        "telegramApi": {
+          "id": "3ho8yDN74nAGl3Cm",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI",
+          "mode": "list",
+          "cachedResultName": "Proyecto N8N",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Candidatos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1FIWwqy1Q7g3ucLujjfcIK_ArD1x7Ssc4NCJwFUuWwaI/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        -1200,
+        1808
+      ],
+      "id": "ee09d308-9032-40fc-b565-ea2d0032b7d3",
+      "name": "Buscar Candidatos2",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "dyMGwccB2xEXoasA",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Append or update row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Confirmacion Candidato",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Notificacion RRHH",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notificacion RRHH": {
+      "main": [
+        [
+          {
+            "node": "Enviar a Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze document1": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Alta1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Media1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Baja1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Alta1": {
+      "main": [
+        [
+          {
+            "node": "Normalizacion1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Media1": {
+      "main": [
+        [
+          {
+            "node": "Normalizacion1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Baja1": {
+      "main": [
+        [
+          {
+            "node": "Normalizacion1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalizacion1": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript2": {
+      "main": [
+        [
+          {
+            "node": "Analyze document1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validar Datos": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error - Validacion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond to Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet1": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "DashBoard": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet2": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript3": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Vacantes Disponibles": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook Crear Vacante": {
+      "main": [
+        [
+          {
+            "node": "Append row in Tabla_Vacantes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in Tabla_Vacantes": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postularse": {
+      "main": [
+        [
+          {
+            "node": "Validar Datos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent2": {
+      "main": [
+        [
+          {
+            "node": "Enviar Respuesta Telegram2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model2": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory2": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consultar Candidatos2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Consultar Vacantes2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger2": {
+      "main": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Candidatos2": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent2",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "31ed7db065670a3788345fc28c9d9ed4b1413919636927d1856d3035ea13f0f2"
+  }
+}
